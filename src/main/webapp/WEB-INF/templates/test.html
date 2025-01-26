@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="test(${array})">
+        <form action="/test" method="post" enctype="application/x-www-form-urlencoded;charset=UTF-8">
+            <div class="form-field">
+            <textarea rows="5" cols="25" name="data"></textarea>
+            </div>
+            <div class="button">
+            <button type="submit">Run</button>
+            </div>		
+        </form>
+        <div th:if="${array} != null">
+            <table>
+                <tr>
+                  <th>Email</th>
+                  <th>Syntax</th>
+                  <th>MX</th>
+                </tr>
+                <tr th:each="row : ${array}">
+                    <td th:each="item : ${row}" th:text="${item}"></td>
+                </tr>
+              </table>
+            </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title th:text="${name} + ' - javatar.ru'"></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+	<div class="name"><h1 th:text="${name}"></h1></div>
+    </header>
+    <main>
+	<div class="right-menu">
+	<ul>
+		<li><a href="/">Main Page</a></li>
+		<li><a href="/test">Email Validator</a></li>
+	</ul>
+	</div>
+    <div class="main-wrapper">
+	<div class="content">
+        <!-- content-->
+        <div th:if="${path} != null">
+            <div class="content" th:replace="test :: test(${array})"></div>
+        <!-- content end-->    
+        </div>
+    </div>
+    </main>
+</body>
+</html>
